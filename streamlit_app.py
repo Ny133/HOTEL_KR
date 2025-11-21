@@ -7,14 +7,14 @@ from haversine import haversine, Unit
 import requests
 from urllib.parse import quote
 
-st.title("🏨 서울 호텔 + 주변 관광지 시각화 (Eng API + CSV)")
+st.title("🏨 서울 호텔 + 주변 관광지 시각화")
 
 # 🔑 API Key
 api_key = "f0e46463ccf90abd0defd9c79c8568e922e07a835961b1676cdb2065ecc23494"
 api_key_encoded = quote(api_key)  # 안전하게 URL 인코딩
 
 # -------------------
-# 1) 호텔 정보 가져오기 (영문 API, 안전 처리)
+# 1) 호텔 정보 가져오기 
 # -------------------
 @st.cache_data(ttl=3600)
 def get_hotels(api_key_encoded):
